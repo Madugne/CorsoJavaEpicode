@@ -5,5 +5,7 @@ public class Main {
         System.out.println("Hello");
         Esercizio1.moltiplica(2, 2);
         Esercizio1.concatena("numero", 5);
+        String[] arrays = {"a", "b", "c", "d", "e"};
+        Esercizio1.inserisciInArray(arrays, "mela");
     }
 }

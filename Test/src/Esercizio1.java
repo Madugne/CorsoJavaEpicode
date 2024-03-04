@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Esercizio1 {
     public static void moltiplica (int numero1, int numero2) {
         int risultato;
@@ -9,4 +11,13 @@ public class Esercizio1 {
         catena = stringa + numero;
         System.out.println(catena);
     }
+    public static void inserisciInArray (String[] array, String stringa) {
+        if (array.length!= 5) {
+            System.out.println("lunghezza array errata");
+        } else {
+            String[] stringaArrayNuova = {array[0], array[1], stringa, array[2], array[3], array[4]};
+            System.out.println("array nuovo " + Arrays.toString(stringaArrayNuova));
+        }
+    }
+
 }
