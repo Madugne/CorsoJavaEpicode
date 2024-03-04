@@ -4,5 +4,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello");
         Esercizio1.moltiplica(2, 2);
+        Esercizio1.concatena("numero", 5);
     }
 }
