@@ -9,10 +9,23 @@ public class esercizio1 {
         String stringa = scanner.nextLine();
         int lunghezza = stringa.length();
         System.out.println(lunghezza);
-        if (lunghezza/2 == 0) {
+        if (lunghezza%2 == 0) {
             System.out.println("pari");
         } else {
             System.out.println("dispari");
         };
+    }
+
+    public static void annoBisestile() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("inserisci un anno");
+        int anno = scanner.nextInt();
+        if (anno%4 == 0) {
+            System.out.println("anno bisestile");
+        } else if (anno % 100 == 0 && anno % 400 == 0) {
+            System.out.println("anno bisestile");
+        } else {
+            System.out.println("anno non bisestile");
+        }
     }
 }
