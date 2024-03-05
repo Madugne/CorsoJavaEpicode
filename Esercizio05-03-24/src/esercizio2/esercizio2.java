@@ -24,6 +24,5 @@ public class esercizio2 {
             default:
                 System.out.println("errore: numero non compreso tra 0 e 3");
         }
-        scanner.close();
     }
 }
