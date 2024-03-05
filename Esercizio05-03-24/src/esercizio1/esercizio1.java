@@ -21,9 +21,7 @@ public class esercizio1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("inserisci un anno");
         int anno = scanner.nextInt();
-        if (anno%4 == 0) {
-            System.out.println("anno bisestile");
-        } else if (anno % 100 == 0 && anno % 400 == 0) {
+        if (anno%4 == 0 && (anno % 100 == 0 && anno % 400 == 0)) {
             System.out.println("anno bisestile");
         } else {
             System.out.println("anno non bisestile");
