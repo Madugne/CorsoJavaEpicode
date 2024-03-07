@@ -6,9 +6,13 @@ public class Dirigente extends Dipendenti {
 
     @Override
     public void calculateSalary() {
-        System.out.println("Ho uno stipendio" + stipendio + "euro al mese e sono Dirigente");
+        System.out.println("Ho uno stipendio" + stipendio + " euro al mese e sono Dirigente");
     }
 
+    @Override
+    public void checkIn() {
+        System.out.println("Ho iniziato a lavorare");
+    }
     @Override
     public String toString() {
         return "Dirigente{" +

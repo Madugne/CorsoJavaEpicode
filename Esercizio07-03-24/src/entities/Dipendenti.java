@@ -37,7 +37,7 @@ public abstract class Dipendenti implements CheckIn {
     }
 
     public void infoDipendente() {
-        System.out.println("Sono la matricola n." + this.matricola + this.stipendio + ", appartengo al settore " + this.settore);
+        System.out.println("Sono la matricola n." + this.matricola + ", appartengo al settore " + this.settore);
     }
 
     public abstract void calculateSalary();

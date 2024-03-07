@@ -16,10 +16,9 @@ public class DipendentePartTime extends Dipendenti {
     }
     @Override
     public void calculateSalary() {
-        System.out.println();
-        if (oreLavorate > 36) {System.out.println(stipendio*1.3);} else {
+        if (oreLavorate > 36) {System.out.println( "Ho uno stipendio di " +stipendio*1.2 + "euro al mese e sono PartTime");} else {
             System.out.println(stipendio);
-            System.out.println("Ho uno stipendio" + stipendio + "euro al mese e sono PartTime");
+            System.out.println("Ho uno stipendio di " + stipendio + " euro al mese e sono PartTime");
         }}
 
     @Override
@@ -34,6 +33,6 @@ public class DipendentePartTime extends Dipendenti {
 
     @Override
     public void checkIn() {
-
+        System.out.println("Ho iniziato a lavorare");
     }
 }

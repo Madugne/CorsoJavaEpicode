@@ -6,9 +6,13 @@ public class DipendenteFullTime extends Dipendenti{
 
     @Override
     public void calculateSalary() {
-        System.out.println("Ho uno stipendio" + stipendio + "euro al mese e sono FullTime");
+        System.out.println("Ho uno stipendio" + stipendio + " euro al mese e sono FullTime");
     }
 
+    @Override
+    public void checkIn() {
+        System.out.println("Ho iniziato a lavorare");
+    }
     @Override
     public String toString() {
         return "DipendenteFullTime{" +
@@ -18,8 +22,5 @@ public class DipendenteFullTime extends Dipendenti{
                 '}';
     }
 
-    @Override
-    public void checkIn() {
 
-    }
 }
