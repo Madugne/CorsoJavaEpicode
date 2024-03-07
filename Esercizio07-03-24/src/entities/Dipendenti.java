@@ -1,8 +1,7 @@
 package entities;
+import interfaces.CheckIn;
 
-import java.util.Random;
-
-public abstract class Dipendenti {
+public abstract class Dipendenti implements CheckIn {
     protected long matricola;
     protected double stipendio;
     protected Settore settore;
@@ -38,11 +37,15 @@ public abstract class Dipendenti {
     }
 
     public void infoDipendente() {
-        System.out.println("Sono la matricola n." + this.matricola + " , ho uno stipendio di "
-        + this.stipendio + ", appartengo al settore " + this.settore);
+        System.out.println("Sono la matricola n." + this.matricola + this.stipendio + ", appartengo al settore " + this.settore);
     }
 
     public abstract void calculateSalary();
+
+    @Override
+    public void checkIn() {
+        System.out.println("Ho iniziato a lavorare");
+    }
 
     @Override
     public String toString() {
