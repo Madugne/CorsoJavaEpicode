@@ -1,7 +1,7 @@
 package entities;
 
-public class DipendenteFullTime extends Dipendenti {
-    public DipendenteFullTime(long matricola, double stipendio, Settore settore) {
+public class Dirigente extends Dipendenti {
+    public Dirigente(long matricola, double stipendio, Settore settore) {
         super(matricola, stipendio, settore);
     }
 

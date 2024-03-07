@@ -42,6 +42,8 @@ public abstract class Dipendenti {
         + this.stipendio + ", appartengo al settore " + this.settore);
     }
 
+    public abstract void calculateSalary();
+
     @Override
     public String toString() {
         return "Dipendenti{" +
