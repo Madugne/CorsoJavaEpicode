@@ -11,6 +11,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Video video = new Video("VideoTest", 10, 20, 30);
+        System.out.println(video.getVolume());
+        video.alzaVolume();
+        System.out.println(video.getVolume());
+        video.abbassaVolume();video.abbassaVolume();video.abbassaVolume();
+        System.out.println(video.getVolume());
+        System.out.println(video.getLuminosita());
+        video.alzaLuminosita();
+        System.out.println(video.getLuminosita());
+        video.abbassaLuminosita();video.abbassaLuminosita();video.abbassaLuminosita();
+        System.out.println(video.getLuminosita());
         ElementoMultimediale[] elementi = new ElementoMultimediale[0];
         String titolo;
         int durata;
