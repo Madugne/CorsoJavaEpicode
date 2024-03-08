@@ -18,7 +18,15 @@ public class Video extends ElementoMultimediale implements Riproducibile, Volume
 
     @Override
     public void play() {
-
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo);
+            for (int j = 0; j < volume; j++) {
+                System.out.println("!");
+            }
+            for (int x = 0; x < luminosita; x++) {
+                System.out.println("*");
+            }
+        }
     }
 
     @Override
