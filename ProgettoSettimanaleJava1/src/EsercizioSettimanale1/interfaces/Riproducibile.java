@@ -1,4 +1,4 @@
-package EsercizioSettimanale1;
+package EsercizioSettimanale1.interfaces;
 
 public interface Riproducibile {
     void play();

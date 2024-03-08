@@ -1,5 +1,7 @@
 package EsercizioSettimanale1;
 
+import EsercizioSettimanale1.interfaces.InterfacciaImmagineShow;
+
 public class Immagine extends ElementoMultimediale implements InterfacciaImmagineShow {
     protected int luminosita;
 
