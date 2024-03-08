@@ -1,6 +1,7 @@
 package EsercizioSettimanale1.interfaces;
 
-public interface Volume {
+public interface RiproducibileVolume {
+    void play();
     void alzaVolume();
     void abbassaVolume();
 }

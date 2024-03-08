@@ -1,12 +1,11 @@
 package EsercizioSettimanale1;
 
-import EsercizioSettimanale1.interfaces.Riproducibile;
-import EsercizioSettimanale1.interfaces.Volume;
+import EsercizioSettimanale1.interfaces.RiproducibileVolume;
 
-public class Audio extends ElementoMultimediale implements Riproducibile, Volume {
-    protected double durata;
-    protected int volume;
-    public Audio(String titolo, double durata, int volume) {
+public class Audio extends ElementoMultimediale implements RiproducibileVolume {
+    private int durata;
+    private int volume;
+    public Audio(String titolo, int durata, int volume) {
         super(titolo);
         this.durata = durata;
         this.volume = volume;
@@ -26,11 +25,17 @@ public class Audio extends ElementoMultimediale implements Riproducibile, Volume
     }
     @Override
     public void play() {
-        for (int i = 0; i < durata; i++) {
-            System.out.println(titolo);
-            for (int j = 0; j < volume; j++) {
-                System.out.println("!");
-            }
+        String esclamativi = "";
+        for (int i = 0; i < volume; i++) {
+            esclamativi += "!";
         }
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo + " " + esclamativi);
+        }
+    }
+
+    @Override
+    public void esegui() {
+        play();
     }
 }
