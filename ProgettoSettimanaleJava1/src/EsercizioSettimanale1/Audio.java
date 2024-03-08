@@ -1,8 +1,8 @@
 package EsercizioSettimanale1;
 
 public class Audio extends ElementoMultimediale implements Riproducibile {
-    private double durata;
-    private int volume;
+    protected double durata;
+    protected int volume;
     public Audio(String titolo, double durata, int volume) {
         super(titolo);
         this.durata = durata;
