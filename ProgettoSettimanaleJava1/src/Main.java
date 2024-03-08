@@ -16,12 +16,14 @@ public class Main {
         int durata;
         int volume;
         int luminosita;
+        int selezionato;
+        boolean esci = false;
         while(elementi.length < 5) {
             System.out.println("LETTORE MULTIMEDIALE \n SELEZIONA ELEMENTO DA CREARE:" );
             System.out.println("1 - Video");
             System.out.println("2 - Immagine");
             System.out.println("3 - Audio \n");
-            int selezionato = scanner.nextInt();
+            selezionato = scanner.nextInt();
 
             switch (selezionato) {
                 case 1:
@@ -55,17 +57,49 @@ public class Main {
                     elementi = copiaArray(elementi, audioCreato);
                     break;
                 default:
-                    System.out.println("Numero non valido");
+                    System.out.println("NUMERO NON VALIDO");
                     break;
             }
         }
 
-        while 
+        while (!esci) {
+            System.out.println("SELEZIONA ELEMENTO DA ESEGUIRE:");
+            System.out.println("1" + " - " + elementi[0].getTitolo());
+            System.out.println("2" + " - " + elementi[1].getTitolo());
+            System.out.println("3" + " - " + elementi[2].getTitolo());
+            System.out.println("4" + " - " + elementi[3].getTitolo());
+            System.out.println("5" + " - " + elementi[4].getTitolo());
+            System.out.println("0 - PER USCIRE \n");
+            selezionato = scanner.nextInt();
+            switch (selezionato) {
+                case 1:
+                    elementi[0].esegui();
+                    break;
+                case 2:
+                    elementi[1].esegui();
+                    break;
+                case 3:
+                    elementi[2].esegui();
+                    break;
+                case 4:
+                    elementi[3].esegui();
+                    break;
+                case 5:
+                    elementi[4].esegui();
+                    break;
+                case 0:
+                    esci = true;
+                    break;
+                default:
+                    System.out.println("NUMERO NON VALIDO");
+                    break;
+            }
+        }
     }
     public static ElementoMultimediale[] copiaArray(ElementoMultimediale[] elementiCreati, ElementoMultimediale elemento) {
         ElementoMultimediale[] nuovoArray = new ElementoMultimediale[elementiCreati.length + 1];
         for (int i = 0; i < elementiCreati.length; i++) {
-            nuovoArray[i] = elementiCreati[1];
+            nuovoArray[i] = elementiCreati[i];
         }
         nuovoArray[elementiCreati.length] = elemento;
         return nuovoArray;

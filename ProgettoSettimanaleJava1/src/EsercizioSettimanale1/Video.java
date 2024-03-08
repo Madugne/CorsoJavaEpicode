@@ -48,6 +48,7 @@ public class Video extends ElementoMultimediale implements RiproducibileVolume, 
     @Override
     public void esegui() {
         play();
+        System.out.println();
     }
 
     @Override

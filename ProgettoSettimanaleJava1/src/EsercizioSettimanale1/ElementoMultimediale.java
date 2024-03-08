@@ -7,4 +7,12 @@ public abstract class ElementoMultimediale {
     }
 
     public abstract void esegui();
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
 }

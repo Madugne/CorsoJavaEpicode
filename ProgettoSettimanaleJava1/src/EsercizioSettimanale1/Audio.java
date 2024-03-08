@@ -37,5 +37,6 @@ public class Audio extends ElementoMultimediale implements RiproducibileVolume {
     @Override
     public void esegui() {
         play();
+        System.out.println();
     }
 }

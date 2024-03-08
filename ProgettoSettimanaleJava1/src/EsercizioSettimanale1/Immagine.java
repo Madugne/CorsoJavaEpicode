@@ -23,6 +23,7 @@ public class Immagine extends ElementoMultimediale implements InterfacciaImmagin
     @Override
     public void esegui() {
         show();
+        System.out.println();
     }
 
     @Override
