@@ -35,7 +35,6 @@ public class Main {
             System.out.println("2 - Immagine");
             System.out.println("3 - Audio \n");
             selezionato = scanner.nextInt();
-
             switch (selezionato) {
                 case 1:
                     System.out.println("Inserisci il titolo:");
