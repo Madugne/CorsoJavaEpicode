@@ -39,4 +39,20 @@ public class Audio extends ElementoMultimediale implements RiproducibileVolume {
         play();
         System.out.println();
     }
+
+    public int getDurata() {
+        return durata;
+    }
+
+    public void setDurata(int durata) {
+        this.durata = durata;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
 }

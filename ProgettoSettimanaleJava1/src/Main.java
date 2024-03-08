@@ -61,7 +61,6 @@ public class Main {
                     break;
             }
         }
-
         while (!esci) {
             System.out.println("SELEZIONA ELEMENTO DA ESEGUIRE:");
             System.out.println("1" + " - " + elementi[0].getTitolo());

@@ -64,4 +64,28 @@ public class Video extends ElementoMultimediale implements RiproducibileVolume, 
                 System.out.println("Luminosita' al minimo");
             }
     }
+
+    public int getDurata() {
+        return durata;
+    }
+
+    public void setDurata(int durata) {
+        this.durata = durata;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public int getLuminosita() {
+        return luminosita;
+    }
+
+    public void setLuminosita(int luminosita) {
+        this.luminosita = luminosita;
+    }
 }

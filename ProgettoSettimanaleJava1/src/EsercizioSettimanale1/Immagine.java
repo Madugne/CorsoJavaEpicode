@@ -39,4 +39,12 @@ public class Immagine extends ElementoMultimediale implements InterfacciaImmagin
             System.out.println("Luminosita' al minimo");
         }
     }
+
+    public int getLuminosita() {
+        return luminosita;
+    }
+
+    public void setLuminosita(int luminosita) {
+        this.luminosita = luminosita;
+    }
 }
