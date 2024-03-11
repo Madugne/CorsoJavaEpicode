@@ -1,6 +1,8 @@
 package Esercizio3;
 import Esercizio3.exceptions.exceptionsBanca;
 
+//DA RIVEDERE E CAPIRE MEGLIO, ESERCIZIO SVOLTO NON DA SOLO MA CON AIUTO
+
 public class Banca {
     public static void main(String args[]) {
         ContoCorrente conto1 = new ContoCorrente("Mario Rossi", 50000.0);
