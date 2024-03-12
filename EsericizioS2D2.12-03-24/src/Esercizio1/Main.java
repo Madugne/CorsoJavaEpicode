@@ -12,8 +12,8 @@ public class Main {
         Set<String> setParoleDuplicate = new HashSet<>();
         Set<String> setParoleDiverse = new HashSet<>();
         System.out.println("Quante stringhe vuoi stampare?");
-        int numeroStringhe = scanner.nextInt();
-        for (int i = 0; i < numeroStringhe; i++) {
+        int numeroParole = scanner.nextInt();
+        for (int i = 0; i < numeroParole; i++) {
             System.out.print("Inserisci una stringa");
             String parola = scanner.next();
             if (!setParole.add(parola)) {
