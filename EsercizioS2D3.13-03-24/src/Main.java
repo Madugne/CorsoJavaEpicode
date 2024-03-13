@@ -29,6 +29,29 @@ public class Main {
         Product baby3 = new Product(6L, "Baby3", "Baby", 230.0);
         productList.add(baby3);
 
+        Product boys1 = new Product(7L, "Boy1", "Boys", 310.0);
+        productList.add(boys1);
+
+        Product boys2 = new Product(8L, "Boy2", "Boys", 320.0);
+        productList.add(boys2);
+
+        Product boys3 = new Product(9L, "Boy3", "Boys", 330.0);
+        productList.add(boys3);
+
+        Customer customer1 = new Customer(1L, "Mario", 1);
+
+        Customer customer2 = new Customer(2L, "Chris", 2);
+
+        Customer customer3 = new Customer(3L, "Maison", 2);
+
+        List<Order> orderList = new ArrayList<>();
+
+        orderList.add(new Order(1L, "Paid", LocalDate.now(), LocalDate.now().plusDays(1), customer1, List.of(baby1, baby3)));
+
+        orderList.add(new Order(2L, "Shipped", LocalDate.now(), LocalDate.now().plusDays(5), customer2, List.of(book1,book2)));
+
+        orderList.add(new Order(3L, "Processed", LocalDate.now(), LocalDate.now().plusDays(5), customer3, List.of(boys1,boys2)));
+
         //ESERCIZIO1
 
         List<Product> filteredBooksList = productList.stream().filter(product -> "Books".equals(product.getCategory()) && product.getPrice() > 100).toList();
@@ -37,16 +60,16 @@ public class Main {
 
         //ESERCIZIO 2
 
-        List<Order> orderList = new ArrayList<>();
-
-        orderList.add(new Order(2L, "Paid", LocalDate.now(), LocalDate.now().plusDays(1), new Customer(1L, "Mario", 1),
-                List.of(baby1, baby3)));
-
-        orderList.add(new Order(1L, "Shipped", LocalDate.now(), LocalDate.now().plusDays(5), new Customer(2L, "Chris", 2),
-                List.of(book1,book2)));
-
-        List<Order> filteredOrders = orderList.stream().filter(order -> order.getProducts().stream().anyMatch(product -> "Baby".equals(product.getCategory()))).toList();
+        List<Order> filteredOrders = orderList.stream().filter(order -> order.getProducts().stream().allMatch(product -> "Baby".equals(product.getCategory()))).toList();
 
         System.out.println("LISTA ORDINI FILTRATA: " + filteredOrders);
+
+        //ESERCIZIO 3
+
+        List<Product> filteredBoysDiscount = productList.stream().filter(product -> "Boys".equals(product.getCategory())).map(product -> {double discountedPrice = product.getPrice() * 0.9;
+                    return new Product(product.getId(), product.getName(), product.getCategory(), discountedPrice);
+        }).toList();
+
+        System.out.println("LISTA PRODOTTI CON SCONTO DEL 10%: " + filteredBoysDiscount);
     }
 }
