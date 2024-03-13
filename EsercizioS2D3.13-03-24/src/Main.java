@@ -40,9 +40,11 @@ public class Main {
 
         Customer customer1 = new Customer(1L, "Mario", 1);
 
-        Customer customer2 = new Customer(2L, "Chris", 2);
+        Customer customer2 = new Customer(2L, "Chris", 1);
 
         Customer customer3 = new Customer(3L, "Maison", 2);
+
+        Customer customer4 = new Customer(4L, "Filippo", 2);
 
         List<Order> orderList = new ArrayList<>();
 
@@ -50,7 +52,9 @@ public class Main {
 
         orderList.add(new Order(2L, "Shipped", LocalDate.now(), LocalDate.now().plusDays(5), customer2, List.of(book1,book2)));
 
-        orderList.add(new Order(3L, "Processed", LocalDate.now(), LocalDate.now().plusDays(5), customer3, List.of(boys1,boys2)));
+        orderList.add(new Order(3L, "Processed", LocalDate.parse("2021-03-03"), LocalDate.now().plusDays(5), customer3, List.of(boys1,boys2)));
+
+        orderList.add(new Order(4L, "Processed", LocalDate.parse("2021-03-03"), LocalDate.now().plusDays(5), customer4, List.of(book1,boys2)));
 
         //ESERCIZIO1
 
@@ -71,5 +75,12 @@ public class Main {
         }).toList();
 
         System.out.println("LISTA PRODOTTI CON SCONTO DEL 10%: " + filteredBoysDiscount);
+
+        //ESERCIZIO 4
+
+        List<Product> filteredOrderedProductsTier2 = orderList.stream().filter(order -> order.getCustomer().getTier() == 2 && order.getOrderDate().isAfter(LocalDate.parse("2021-01-31"))
+                        && order.getOrderDate().isBefore(LocalDate.parse("2021-04-02"))).flatMap(order -> order.getProducts().stream()).toList();
+
+        System.out.println("PRODOTTI ORDINATI DA CLIENTI DI TIER 2" + filteredOrderedProductsTier2);
     }
 }
