@@ -78,5 +78,6 @@ public class Main {
 
         System.out.println();
         //ESERCIZIO4
+        double avarageOrderPrice = orderList.stream().
     }
 }
