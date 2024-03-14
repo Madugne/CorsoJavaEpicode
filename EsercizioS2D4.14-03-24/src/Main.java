@@ -78,6 +78,7 @@ public class Main {
 
         System.out.println();
         //ESERCIZIO4
-        double avarageOrderPrice = orderList.stream().
+        OptionalDouble averageOrderPrice = orderList.stream().mapToDouble(order -> order.getProducts().stream().mapToDouble(product -> product.getPrice()).sum()).average();
+        System.out.println(averageOrderPrice);
     }
 }
