@@ -2,6 +2,7 @@ import entities.Customer;
 import entities.Order;
 import entities.Product;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -55,12 +56,15 @@ public class Main {
 
         orderList.add(new Order(4L, "Processed", LocalDate.parse("2021-03-03"), LocalDate.now().plusDays(5), customer4, List.of(book1,boys2)));
 
+        System.out.println();
+        System.out.println("ESERCIZIO1");
         //ESERCIZIO1
 
         Map<Customer, List<Order>> ordersByCustomer = orderList.stream().collect(Collectors.groupingBy(order -> order.getCustomer()));
         System.out.println(ordersByCustomer);
 
         System.out.println();
+        System.out.println("ESERCIZIO2");
         //ESERCIZIO2
         Map<Customer, Double> customerOrderPriceSum = orderList.stream().collect(Collectors.toMap(order -> order.getCustomer(),
                 order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum()));
@@ -71,14 +75,22 @@ public class Main {
         });
 
         System.out.println();
+        System.out.println("ESERCIZIO3");
         //ESERCIZIO3
         List<Product> productsSortedByPrice = productList.stream().sorted(Comparator.comparingDouble(product -> product.getPrice())).toList();
 
         productsSortedByPrice.forEach(System.out::println);
 
         System.out.println();
+        System.out.println("ESERCIZIO4");
         //ESERCIZIO4
         OptionalDouble averageOrderPrice = orderList.stream().mapToDouble(order -> order.getProducts().stream().mapToDouble(product -> product.getPrice()).sum()).average();
         System.out.println(averageOrderPrice);
+
+        System.out.println();
+        System.out.println("ESERCIZIO5");
+        //ESERCIZIO5
+        Map<String, Double> productByCategoryPlusSum = productList.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.summingDouble(Product::getPrice)));
+        System.out.println(productByCategoryPlusSum);
     }
 }
