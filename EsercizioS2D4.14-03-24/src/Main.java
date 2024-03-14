@@ -61,7 +61,11 @@ public class Main {
         //ESERCIZIO1
 
         Map<Customer, List<Order>> ordersByCustomer = orderList.stream().collect(Collectors.groupingBy(order -> order.getCustomer()));
-        System.out.println(ordersByCustomer);
+        ordersByCustomer.forEach((customer, orders) -> {
+            System.out.println("Cliente: " + customer.getName());
+            System.out.println("Ordini:");
+            orders.forEach(order -> System.out.println(order.getProducts()));
+        });
 
         System.out.println();
         System.out.println("ESERCIZIO2");
